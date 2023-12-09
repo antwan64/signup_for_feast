@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # ... rest of your controller actions ...
-end
 
   def index
     matching_events = Event.all

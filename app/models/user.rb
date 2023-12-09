@@ -26,11 +26,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-         #user = User.new({ :email => "test@example.com", :password => "password123", :first_name => "John", :last_name => "Doe" })
-#user.save
+         
          validates :first_name, presence: true
 
-         validates :first_name, uniqueness: true
+         validates :first_name, uniqueness: false
+
+         validates :last_name, presence: true
+
+         validates :last_name, uniqueness: false
 
          has_many  :foods, class_name: "Menu", dependent: :destroy
 
