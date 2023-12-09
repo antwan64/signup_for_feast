@@ -25,11 +25,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many  :foods, class_name: "Menu", dependent: :destroy
 
+         #user = User.new({ :email => "test@example.com", :password => "password123", :first_name => "John", :last_name => "Doe" })
+#user.save
          validates :first_name, presence: true
 
          validates :first_name, uniqueness: true
+
+         has_many  :foods, class_name: "Menu", dependent: :destroy
+
+
+
 
 
 end
