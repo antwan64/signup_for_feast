@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     the_event = Event.new
     the_event.event_date = params.fetch("query_event_date")
     the_event.event_name = params.fetch("query_event_name")
-    the_event.menus_count = params.fetch("query_menus_count")
+    the_event.menus_count = 1
 
     if the_event.valid?
       the_event.save
